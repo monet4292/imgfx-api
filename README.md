@@ -200,7 +200,7 @@ Create an issue [here](https://github.com/rohitaryal/imageFX-api/issues). Make s
 </details>
 
 ## Contributions
-Contribution are welcome but ensure to pass all test cases and follow existing coding standard.
+Contribution are welcome but ensure to pass all test cases and follow existing coding standard. Read `AGENTS.md` for the complete contributor playbook before opening a PR.
 
 ## Disclaimer
 This project demonstrates usage of Google's private API but is not affiliated with Google. Use at your own risk.
