@@ -16,7 +16,7 @@ The output includes:
 - `$ROOT/.codex/tech.md`
 
 If `$ROOT` is omitted, Codex assumes the workspace root.
-
+If the 3 files are already available, update it according to the current codebase
 ---
 
 ## Objective
@@ -84,4 +84,4 @@ Add at the end:
 
 ---
 
-## Invocation Example
+
