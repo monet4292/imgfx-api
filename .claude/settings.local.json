@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__serena__list_dir",
+      "mcp__serena__activate_project"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "sequential-thinking",
+    "context7",
+    "playwright",
+    "serena",
+    "morphllm-fast-apply",
+    "tavily",
+    "chrome-devtools",
+    "magic",
+    "tavily-remote-mcp"
+  ]
+}

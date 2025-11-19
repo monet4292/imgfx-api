@@ -139,3 +139,8 @@ docs/request-headers.txt
 .cursor/
 .github/
 .mcp-bridge/
+
+# Python virtual environment
+venv/
+env/
+ENV/

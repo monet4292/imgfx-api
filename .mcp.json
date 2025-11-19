@@ -1,0 +1,95 @@
+{
+    "mcpServers": {
+      "sequential-thinking": {
+        "type": "stdio",
+        "command": "cmd",
+        "args": [
+          "/c",
+          "npx",
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking"
+        ],
+        "env": {}
+      },
+      "context7": {
+        "type": "stdio",
+        "command": "cmd",
+        "args": [
+          "/c",
+          "npx",
+          "-y",
+          "@upstash/context7-mcp"
+        ],
+        "env": {}
+      },
+      "playwright": {
+        "type": "stdio",
+        "command": "cmd",
+        "args": [
+          "/c",
+          "npx",
+          "-y",
+          "@playwright/mcp@latest"
+        ],
+        "env": {}
+      },
+      "serena": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "--from",
+          "git+https://github.com/oraios/serena",
+          "serena",
+          "start-mcp-server",
+          "--context",
+          "ide-assistant",
+          "--enable-web-dashboard",
+          "false",
+          "--enable-gui-log-window",
+          "false"
+        ],
+        "env": {}
+      },
+      "morphllm-fast-apply": {
+        "type": "stdio",
+        "command": "cmd",
+        "args": [
+          "/c",
+          "npx",
+          "-y",
+          "@morph-llm/morph-fast-apply"
+        ],
+        "env": {
+            "MORPH_API_KEY": "sk-G1MpceYutEOqAVFLntcEYNieVi3JoVeR4Lu1OrbpFDHQnw_f"
+        }
+      },
+      "tavily-remote-mcp": {
+        "command": "npx -y mcp-remote https://mcp.tavily.com/mcp/?tavilyApiKey=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",
+        "env": {}
+      },
+      "chrome-devtools": {
+        "type": "stdio",
+        "command": "cmd",
+        "args": [
+          "/c",
+          "npx",
+          "-y",
+          "chrome-devtools-mcp@latest"
+        ],
+        "env": {}
+      },
+      "magic": {
+        "type": "stdio",
+        "command": "cmd",
+        "args": [
+          "/c",
+          "npx",
+          "-y",
+          "@21st-dev/magic"
+        ],
+        "env": {
+            "API_KEY": "07b0d638f3009ed52fae07f6a5b282acd4f636423092b29d1f49b16d0fe3e331"
+        }
+      }
+    }
+  }

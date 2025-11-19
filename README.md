@@ -8,6 +8,39 @@ Unofficial free reverse engineered api for imageFX(imagen) service provided by [
 npm i -g @monet4292/imgfx-api
 ```
 
+## Python Virtual Environment
+
+This project includes a Python virtual environment for additional Python tools and scripts.
+
+### Activating the Virtual Environment
+
+**Option 1: Using the batch file (Windows Command Prompt)**
+```bash
+activate.bat
+```
+
+**Option 2: Using the PowerShell script**
+```powershell
+.\activate.ps1
+```
+
+**Option 3: Manual activation**
+```bash
+# Windows Command Prompt
+.\venv\Scripts\activate
+
+# PowerShell
+.\venv\Scripts\Activate.ps1
+
+# Git Bash
+source venv/Scripts/activate
+```
+
+### Deactivating the Virtual Environment
+```bash
+deactivate
+```
+
 ## Features
 1. Text to image using `IMAGEN_3/4`
 2. Image to text
