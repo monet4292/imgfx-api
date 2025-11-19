@@ -9,7 +9,7 @@
         "require": "./dist/index.js"
     },
     "bin": {
-        "imagefx": "./dist/cli.js"
+        "imgfx": "./dist/cli.js"
     },
     "files": [
         "dist"

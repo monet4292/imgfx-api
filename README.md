@@ -14,12 +14,12 @@ npm i -g @monet4292/imgfx-api
 3. Command line support
 
 ## Usage
-`imagefx` can be invoked through both command line and as a module.
+`imgfx` can be invoked through both command line and as a module.
 <details>
 <summary style="font-weight: bold;font-size:15px;">Command Line</summary>
 
 Make sure you have:
-1. Installed `imagefx` globally ([How to install?](#installation))
+1. Installed `imgfx` globally ([How to install?](#installation))
 2. Obtained your google account cookies ([How to get cookies?](#help))
 3. Set env variable `GOOGLE_COOKIE` containing your cookie
     
@@ -48,35 +48,35 @@ Make sure you have:
 
     ```bash
     # saves generated image at current directory
-    imagefx generate --prompt "A bad friend" --cookie "$GOOGLE_COOKIE"
+    imgfx generate --prompt "A bad friend" --cookie "$GOOGLE_COOKIE"
     ```
 - Selecting a specific model
     ```bash
     # please refer to --help for listing all models
-    imagefx generate --prompt "An evil company" --model "IMAGEN_3_5" --cookie "$GOOGLE_COOKIE"
+    imgfx generate --prompt "An evil company" --model "IMAGEN_3_5" --cookie "$GOOGLE_COOKIE"
     ```
 - Selecting a specific aspect ratio
     ```bash
     # please refer to --help for listing all aspect ratio
-    imagefx generate --prompt "Reptillian CEO" --size "PORTRAIT" --cookie "$GOOGLE_COOKIE"
+    imgfx generate --prompt "Reptillian CEO" --size "PORTRAIT" --cookie "$GOOGLE_COOKIE"
     ```
 - Saving to specific destination
     ```bash
     # it will automatically create non-existing directory if possible
-    imagefx generate --prompt "Netflix but with less fees" --dir ~/Pictures --cookie "$GOOGLE_COOKIE"
+    imgfx generate --prompt "Netflix but with less fees" --dir ~/Pictures --cookie "$GOOGLE_COOKIE"
     ```
 - You can also save image using its media id.
     ```bash
-    imagefx fetch "__MEDIA__ID__HERE__" --cookie "$GOOGLE_COOKIE"
+    imgfx fetch "__MEDIA__ID__HERE__" --cookie "$GOOGLE_COOKIE"
     ```
 - Generating prompt/caption using an image as reference.
     ```bash
     # supported image types: jpeg, jpg, jpe, png, gif, webp, svg, bmp, tiff, apng, avif (not tested with all)
-    imagefx caption --image /path/to/img.webp --type WEBP --cookie "$GOOGLE_COOKIE"
+    imgfx caption --image /path/to/img.webp --type WEBP --cookie "$GOOGLE_COOKIE"
     ```
 Full generation help:
 ```text
-imagefx generate <options>
+imgfx generate <options>
 
 Options:
       --version     Show version number
@@ -106,7 +106,7 @@ Options:
 
 Full fetching help:
 ```text
-imagefx fetch <mediaId>
+imgfx fetch <mediaId>
 
 Positionals:
   mediaId  Unique ID of generated image
