@@ -13,7 +13,7 @@ Your role is to analyze user requirements, delegate tasks to appropriate sub-age
 - You must not use TypeScript `class` unless absolutely necessary
 
 ## Project Structure & Module Organization
-imageFX API is TypeScript-first. `src/` hosts the runtime modules - `ImageFX.ts` orchestrates image generation, `Account.ts` keeps cookie-backed auth, `Prompt.ts` and `Image.ts` model payloads, and `cli.ts` exposes the `imagefx` binary while `src/index.ts` re-exports the surface.
+imgfx API is TypeScript-first. `src/` hosts the runtime modules - `ImageFX.ts` orchestrates image generation, `Account.ts` keeps cookie-backed auth, `Prompt.ts` and `Image.ts` model payloads, and `cli.ts` exposes the `imagefx` binary while `src/index.ts` re-exports the surface.
 Tests sit under `tests/` with numbered specs (`1-account.test.ts`, `2-generate.test.ts`, etc.), usage samples belong in `examples/`, shared media in `assets/`, and compiler output is emitted to `dist/` only.
 Project automation and workflow files live in `.github/`.
 

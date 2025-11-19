@@ -1,11 +1,11 @@
-# imageFX-api (imagen)
+# imgfx-api (imagen)
 Unofficial free reverse engineered api for imageFX(imagen) service provided by [labs.google](https://labs.google)
 
-![Banner](https://raw.githubusercontent.com/rohitaryal/imageFX-api/refs/heads/main/assets/banner.png)
+![Banner](https://raw.githubusercontent.com/monet4292/imgfx-api/refs/heads/main/assets/banner.png)
 
 ## Installation
 ```bash
-npm i -g @rohitaryal/imagefx-api
+npm i -g @monet4292/imgfx-api
 ```
 
 ## Features
@@ -125,7 +125,7 @@ Options:
 - Basic image generation
 
     ```typescript
-    import { ImageFX } from "@rohitaryal/imagefx-api";
+    import { ImageFX } from "@monet4292/imgfx-api";
 
     const fx = new ImageFX(process.env.GOOGLE_COOKIE);
 
@@ -160,7 +160,7 @@ Options:
     });
     ```
 
-More examples are at: [/examples](https://github.com/rohitaryal/imageFX-api/tree/main/examples)
+More examples are at: [/examples](https://github.com/monet4292/imgfx-api/tree/main/examples)
 </details>
 
 ## Help
@@ -196,7 +196,7 @@ More examples are at: [/examples](https://github.com/rohitaryal/imageFX-api/tree
 <details>
 <summary style="font-weight: bold;font-size:15px;">Not able to generate images?</summary>
 
-Create an issue [here](https://github.com/rohitaryal/imageFX-api/issues). Make sure the pasted logs don't contain cookie or tokens.
+Create an issue [here](https://github.com/monet4292/imgfx-api/issues). Make sure the pasted logs don't contain cookie or tokens.
 </details>
 
 ## Contributions

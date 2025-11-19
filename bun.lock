@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "@rohitaryal/imagefx-api",
+      "name": "@monet4292/imgfx-api",
       "dependencies": {
         "typescript": "^5.9.2",
         "yargs": "^18.0.0",
