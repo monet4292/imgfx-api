@@ -91,6 +91,14 @@ Options:
   -c, --cookie      Google account cookie
 ```
 
+Supported values for `--size`:
+- `MOBILE_PORTRAIT_THREE_FOUR` → Mobile Portrait (3:4)
+- `MOBILE_LANDSCAPE_FOUR_THREE` → Mobile Landscape (4:3)
+- `LANDSCAPE` → Landscape (16:9)
+- `PORTRAIT` → Portrait (9:16)
+- `SQUARE` → Square
+
+
 Full caption generation help:
 ```text
 Generate detailed caption(s) from image
@@ -140,6 +148,8 @@ Options:
     ```
 - More descriptive prompt
     ```typescript
+    import { ImageFX, Prompt, AspectRatio } from "@monet4292/imgfx-api";
+
     const fx = new ImageFX(GOOGLE_COOKIE);
 
     const prompt = new Prompt({
@@ -147,7 +157,7 @@ Options:
         numberOfImages: 4,
         prompt: "A green spongebob",
         generationModel: "IMAGEN_3_5",
-        aspectRatio: "IMAGE_ASPECT_RATIO_SQUARE",
+        aspectRatio: AspectRatio.MOBILE_PORTRAIT_THREE_FOUR,
     });
 
     // Generate images

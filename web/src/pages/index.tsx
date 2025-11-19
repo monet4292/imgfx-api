@@ -5,7 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent } from '@/components/ui/card';
 import { useCookie } from '@/context/CookieContext';
 import { useState } from 'react';
-import { AspectRatio, Model } from '@monet4292/imgfx-api';
+import { AspectRatio, Model, AspectRatioLabels } from '@monet4292/imgfx-api';
 import Head from 'next/head';
 import { addToHistory } from '@/lib/history';
 
@@ -13,7 +13,14 @@ export default function Home() {
   const { isConfigured, cookie } = useCookie();
   const [prompt, setPrompt] = useState('');
   const [model, setModel] = useState<string>('IMAGEN_3_5');
-  const [aspectRatio, setAspectRatio] = useState<string>('IMAGE_ASPECT_RATIO_LANDSCAPE');
+  const aspectRatioOptions = [
+    AspectRatio.MOBILE_PORTRAIT_THREE_FOUR,
+    AspectRatio.MOBILE_LANDSCAPE_FOUR_THREE,
+    AspectRatio.LANDSCAPE,
+    AspectRatio.PORTRAIT,
+    AspectRatio.SQUARE,
+  ];
+  const [aspectRatio, setAspectRatio] = useState<AspectRatio>(AspectRatio.LANDSCAPE);
   const [count, setCount] = useState(2);
   const [loading, setLoading] = useState(false);
   const [images, setImages] = useState<string[]>([]);
@@ -113,14 +120,14 @@ export default function Home() {
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">Aspect Ratio</label>
-                <Select value={aspectRatio} onValueChange={setAspectRatio}>
+                <Select value={aspectRatio} onValueChange={(value) => setAspectRatio(value as AspectRatio)}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select ratio" />
                   </SelectTrigger>
                   <SelectContent>
-                    {Object.values(AspectRatio).map((r) => (
+                    {aspectRatioOptions.map((r) => (
                       <SelectItem key={r} value={r}>
-                        {r.replace('IMAGE_ASPECT_RATIO_', '')}
+                        {AspectRatioLabels[r]}
                       </SelectItem>
                     ))}
                   </SelectContent>

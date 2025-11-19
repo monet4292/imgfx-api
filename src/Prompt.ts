@@ -15,7 +15,7 @@ export class Prompt {
     /**
      * A specific number that serves as the starting point
      * for the random process used to create the image.
-     * 
+     *
      * Default value: `0`
      */
     seed: number;
@@ -26,19 +26,20 @@ export class Prompt {
     /**
      * Number of image to generate in one fetch request.
      * Max may be `8` but changes with different account.
-     * 
+     *
      * Default value: `1`
      */
     numberOfImages: number;
     /**
-     * The ratio of the width to the height of the image 
+     * The ratio of the width to the height of the image
      * to be generated.
-     * 
+     *
      * Available aspect ratios:
-     * - `"IMAGE_ASPECT_RATIO_SQUARE"`
-     * - `"IMAGE_ASPECT_RATIO_PORTRAIT"`
-     * - `"IMAGE_ASPECT_RATIO_LANDSCAPE"`
-     * - `"IMAGE_ASPECT_RATIO_UNSPECIFIED"`
+     * - "IMAGE_ASPECT_RATIO_PORTRAIT_THREE_FOUR" (Mobile Portrait 3:4)
+     * - "IMAGE_ASPECT_RATIO_LANDSCAPE_FOUR_THREE" (Mobile Landscape 4:3)
+     * - "IMAGE_ASPECT_RATIO_LANDSCAPE" (Landscape 16:9)
+     * - "IMAGE_ASPECT_RATIO_PORTRAIT" (Portrait 9:16)
+     * - "IMAGE_ASPECT_RATIO_SQUARE" (Square)
      */
     aspectRatio: AspectRatio;
     /**

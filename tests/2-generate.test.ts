@@ -60,8 +60,8 @@ test("Image Seed", async () => {
 test("Multiple Parameters", async () => {
     const prompt = new Prompt({
         prompt: "A green scary crocodile",
-        aspectRatio: "IMAGE_ASPECT_RATIO_LANDSCAPE",
-        generationModel: "IMAGEN_3_1",
+        aspectRatio: AspectRatio.LANDSCAPE,
+        generationModel: Model.IMAGEN_3_5,
         numberOfImages: 2,
         seed: 200
     });

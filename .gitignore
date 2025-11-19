@@ -130,3 +130,8 @@ dist
 .pnp.*
 .auth
 .png
+
+# Local cookies and captured headers
+cookie/
+cookies/
+docs/request-headers.txt

@@ -30,7 +30,7 @@ export default async function handler(
         const promptObj = new Prompt({
             prompt: prompt,
             generationModel: (model as Model) || "IMAGEN_3_5",
-            aspectRatio: (aspectRatio as AspectRatio) || "IMAGE_ASPECT_RATIO_LANDSCAPE",
+            aspectRatio: (aspectRatio as AspectRatio) || AspectRatio.LANDSCAPE,
             numberOfImages: count || 2,
         });
 

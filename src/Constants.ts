@@ -3,10 +3,11 @@ export const Model = Object.freeze({
 } as const);
 
 export const AspectRatio = Object.freeze({
-    SQUARE: "IMAGE_ASPECT_RATIO_SQUARE",
-    PORTRAIT: "IMAGE_ASPECT_RATIO_PORTRAIT",
+    MOBILE_PORTRAIT_THREE_FOUR: "IMAGE_ASPECT_RATIO_PORTRAIT_THREE_FOUR",
+    MOBILE_LANDSCAPE_FOUR_THREE: "IMAGE_ASPECT_RATIO_LANDSCAPE_FOUR_THREE",
     LANDSCAPE: "IMAGE_ASPECT_RATIO_LANDSCAPE",
-    UNSPECIFIED: "IMAGE_ASPECT_RATIO_UNSPECIFIED",
+    PORTRAIT: "IMAGE_ASPECT_RATIO_PORTRAIT",
+    SQUARE: "IMAGE_ASPECT_RATIO_SQUARE",
 } as const);
 
 // Can be mutated and shared :)
@@ -30,6 +31,14 @@ export const ImageType = Object.freeze({
     AVIF: "avif",
 } as const);
 
-export type Model = typeof Model[keyof typeof Model]
-export type AspectRatio = typeof AspectRatio[keyof typeof AspectRatio]
+export type Model = typeof Model[keyof typeof Model];
+export type AspectRatio = typeof AspectRatio[keyof typeof AspectRatio];
 export type ImageType = typeof ImageType[keyof typeof ImageType];
+
+export const AspectRatioLabels: Record<AspectRatio, string> = Object.freeze({
+    [AspectRatio.MOBILE_PORTRAIT_THREE_FOUR]: "Mobile Portrait (3:4)",
+    [AspectRatio.MOBILE_LANDSCAPE_FOUR_THREE]: "Mobile Landscape (4:3)",
+    [AspectRatio.LANDSCAPE]: "Landscape (16:9)",
+    [AspectRatio.PORTRAIT]: "Portrait (9:16)",
+    [AspectRatio.SQUARE]: "Square",
+});

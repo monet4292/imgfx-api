@@ -1,4 +1,4 @@
-import { ImageFX, Prompt } from "../src/index";
+import { ImageFX, Prompt, AspectRatio } from "../src/index";
 
 const GOOGLE_COOKIE = process.env.GOOGLE_COOKIE;
 if (!GOOGLE_COOKIE) {
@@ -11,7 +11,7 @@ const prompt = new Prompt({
     seed: 0,
     numberOfImages: 4,
     prompt: "A guy who likes spongebob", // Don't judge me
-    aspectRatio: "IMAGE_ASPECT_RATIO_SQUARE",
+    aspectRatio: AspectRatio.SQUARE,
     generationModel: "IMAGEN_3_5",
 })
 

@@ -1,11 +1,25 @@
 #!/usr/bin/env node
 import yargs from "yargs";
 import { hideBin } from 'yargs/helpers';
-import { AspectRatio, ImageType, Model } from "./Constants.js";
+import { AspectRatio, AspectRatioLabels, ImageType, Model } from "./Constants.js";
 import { ImageFX } from "./ImageFX.js";
 import { Prompt } from "./Prompt.js";
 
 const y = yargs();
+const aspectRatioChoices = [
+    { cliValue: "MOBILE_PORTRAIT_THREE_FOUR", value: AspectRatio.MOBILE_PORTRAIT_THREE_FOUR },
+    { cliValue: "MOBILE_LANDSCAPE_FOUR_THREE", value: AspectRatio.MOBILE_LANDSCAPE_FOUR_THREE },
+    { cliValue: "LANDSCAPE", value: AspectRatio.LANDSCAPE },
+    { cliValue: "PORTRAIT", value: AspectRatio.PORTRAIT },
+    { cliValue: "SQUARE", value: AspectRatio.SQUARE },
+] as const;
+
+const aspectRatioChoiceMap = Object.fromEntries(
+    aspectRatioChoices.map(({ cliValue, value }) => [cliValue, value])
+) as Record<typeof aspectRatioChoices[number]["cliValue"], AspectRatio>;
+const aspectRatioHelpText = aspectRatioChoices
+    .map(({ cliValue, value }) => `${cliValue} (${AspectRatioLabels[value]})`)
+    .join(", ");
 
 await y
     .scriptName("ImageFX")
@@ -34,10 +48,10 @@ await y
                 })
                 .option("size", {
                     alias: "sz",
-                    describe: "Aspect ratio of image to be generated",
+                    describe: `Aspect ratio of image to be generated (${aspectRatioHelpText})`,
                     type: "string",
                     default: "LANDSCAPE",
-                    choices: Object.values(AspectRatio).map((value) => value.replace("IMAGE_ASPECT_RATIO_", "")),
+                    choices: aspectRatioChoices.map(({ cliValue }) => cliValue),
                 })
                 .option("seed", {
                     alias: "s",
@@ -75,12 +89,13 @@ await y
             }
 
             const fx = new ImageFX(argv.cookie);
+            const selectedAspectRatio = aspectRatioChoiceMap[argv.size as keyof typeof aspectRatioChoiceMap] ?? AspectRatio.LANDSCAPE;
             const prompt = new Prompt({
                 seed: argv.seed,
                 prompt: argv.prompt,
                 numberOfImages: argv.count,
                 generationModel: argv.model as Model,
-                aspectRatio: ("IMAGE_ASPECT_RATIO_" + argv.size) as AspectRatio,
+                aspectRatio: selectedAspectRatio,
             });
 
             console.log("[*] Generating. Please wait...");

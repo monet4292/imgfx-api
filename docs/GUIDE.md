@@ -68,7 +68,7 @@ async function main() {
   // 2. Advanced Generation
   const prompt = new Prompt({
     prompt: "A futuristic car",
-    aspectRatio: "IMAGE_ASPECT_RATIO_LANDSCAPE",
+    aspectRatio: "IMAGE_ASPECT_RATIO_PORTRAIT_THREE_FOUR", // Mobile Portrait (3:4)
     generationModel: "IMAGEN_3_5",
     numberOfImages: 2
   });
@@ -99,6 +99,27 @@ This project is a **reverse-engineered client**. Here is the flow of operations:
     2.  The server processes the request (this can take a few seconds).
     3.  The server returns a JSON response containing a list of `generatedImages` (URLs and Metadata).
     4.  The client wraps these in `Image` objects.
+
+#### Example Payload Captured from labs.google UI
+```json
+{
+  "userInput": {
+    "candidatesCount": 4,
+    "prompts": [
+      "Ukiyo-e painting of a cat hacker wearing VR headsets, on a postage stamp, no text in any characters"
+    ],
+    "seed": 899230
+  },
+  "clientContext": {
+    "sessionId": ";1763566388957",
+    "tool": "IMAGE_FX"
+  },
+  "modelInput": {
+    "modelNameType": "IMAGEN_3_5"
+  },
+  "aspectRatio": "IMAGE_ASPECT_RATIO_PORTRAIT_THREE_FOUR"
+}
+```
 
 ### 3. Image Captioning Flow (`ImageFX.ts` -> `generateCaptionsFromImage`)
 *   **Endpoint**: `https://labs.google/fx/api/trpc/backbone.captionImage`

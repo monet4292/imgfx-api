@@ -23,14 +23,15 @@ export interface PromptArg {
     numberOfImages?: number;
 
     /**
-     * The ratio of the width to the height of the image 
+     * The ratio of the width to the height of the image
      * to be generated.
-     * 
+     *
      * Available aspect ratios:
-     * - `"IMAGE_ASPECT_RATIO_SQUARE"`
-     * - `"IMAGE_ASPECT_RATIO_PORTRAIT"`
-     * - `"IMAGE_ASPECT_RATIO_LANDSCAPE"`
-     * - `"IMAGE_ASPECT_RATIO_UNSPECIFIED"`
+     * - `"IMAGE_ASPECT_RATIO_PORTRAIT_THREE_FOUR"` (Mobile Portrait 3:4)
+     * - `"IMAGE_ASPECT_RATIO_LANDSCAPE_FOUR_THREE"` (Mobile Landscape 4:3)
+     * - `"IMAGE_ASPECT_RATIO_LANDSCAPE"` (Landscape 16:9)
+     * - `"IMAGE_ASPECT_RATIO_PORTRAIT"` (Portrait 9:16)
+     * - `"IMAGE_ASPECT_RATIO_SQUARE"` (Square)
      */
     aspectRatio?: AspectRatio;
 
@@ -69,4 +70,3 @@ export interface SessionData {
     expires: string;
     access_token: string;
 }
-
