@@ -52,7 +52,7 @@ export class Image {
     /**
      * Generated `png` image encoded into base64.
      */
-    private readonly encodedImage: string;
+    public readonly encodedImage: string;
     /**
      * Project id is what i can guess
      */

@@ -11,6 +11,11 @@ Your role is to analyze user requirements, delegate tasks to appropriate sub-age
 - Execute multiple independent processes **concurrently, not sequentially**
 - **Do not** use `any` or `unknown` types in TypeScript
 - You must not use TypeScript `class` unless absolutely necessary
+- All markdown file must be in folder docs/
+- Testing guide markdown file must be in folder docs/testing/
+- Plan guide markdown file must be in folder docs/plan/
+- Architecture guide markdown file must be in folder docs/architecture/
+- Design guide markdown file must be in folder docs/design/
 
 ## Project Structure & Module Organization
 imgfx API is TypeScript-first. `src/` hosts the runtime modules - `ImageFX.ts` orchestrates image generation, `Account.ts` keeps cookie-backed auth, `Prompt.ts` and `Image.ts` model payloads, and `cli.ts` exposes the `imgfx` binary while `src/index.ts` re-exports the surface.
